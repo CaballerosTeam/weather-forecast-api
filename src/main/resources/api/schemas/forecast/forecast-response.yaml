@@ -1,0 +1,9 @@
+ForecastResponse:
+  type: object
+  required:
+    - timeseries
+  properties:
+    timeseries:
+      type: array
+      items:
+        $ref: "./time-step-forecast.yaml#/TimeStepForecast"

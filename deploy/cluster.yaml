@@ -1,0 +1,13 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: weather-forecast-cluster
+  region: us-east-1
+  tags:
+    project: weather-forecast
+
+nodeGroups:
+  - name: worked-node
+    instanceType: m5.large
+    desiredCapacity: 3

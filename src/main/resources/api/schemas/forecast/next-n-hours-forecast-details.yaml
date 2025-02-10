@@ -1,0 +1,11 @@
+NextNHoursForecastDetails:
+  type: object
+  description: Next N hours forecast details
+  required:
+    - airTemperature
+    - precipitationAmount
+  properties:
+    airTemperature:
+      $ref: "./range.yaml#/Range"
+    precipitationAmount:
+      $ref: "./range.yaml#/Range"

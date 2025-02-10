@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: Weather forecast API specification
+  version: 1.0
+tags:
+  - name: Forecast
+    description: Operations related to weather forecast
+paths:
+  /api/v1/forecast:
+    get:
+      tags:
+        - Forecast
+      description: Get weather forcast for given lat and lon
+      operationId: getForecastByCoordinates
+      parameters:
+        - name: lat
+          in: query
+          required: true
+          description: Latitude
+          schema:
+            type: number
+            format: double
+        - name: lon
+          in: query
+          required: true
+          description: Longitude
+          schema:
+            type: number
+            format: double
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/forecast/forecast-response.yaml#/ForecastResponse"
+        default:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/common/error.yaml#/Error"
+  /api/v1/raw/forecast:
+    get:
+      tags:
+        - Forecast
+      description: Get weather forcast for given lat and lon
+      operationId: getRawForecastByCoordinates
+      parameters:
+        - name: lat
+          in: query
+          required: true
+          description: Latitude
+          schema:
+            type: number
+            format: double
+        - name: lon
+          in: query
+          required: true
+          description: Longitude
+          schema:
+            type: number
+            format: double
+      responses:
+        200:
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+        default:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas/common/error.yaml#/Error"

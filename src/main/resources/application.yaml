@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: yr-forecast
+
+springdoc:
+  show-actuator: true
+
+logging:
+  level:
+    com.cabaleros.weather.forecast.util.ratelimit.job.RateLimitBucketJob: warn
+    com.cabaleros.weather.forecast.util.ratelimit.service.impl.RateLimitServiceImpl: warn
+
+weather-forecast:
+  forecast-provider:
+    host: https://api.met.no
+  api:
+    rate-limit:
+      max-rate: 3
+      capacity: 10

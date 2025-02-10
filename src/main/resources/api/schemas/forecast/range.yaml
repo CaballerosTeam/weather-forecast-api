@@ -1,0 +1,25 @@
+Range:
+  type: object
+  required:
+    - minValue
+    - maxValue
+    - units
+  properties:
+    minValue:
+      type: number
+      format: double
+      example: 17.1
+      description: Minimum value
+    maxValue:
+      type: number
+      format: double
+      example: 22.3
+      description: Maximum value
+    units:
+      type: string
+      description: Units
+    averageValue:
+      type: number
+      format: double
+      example: 21.0
+      description: Average between minimum and maximum values (optional property)

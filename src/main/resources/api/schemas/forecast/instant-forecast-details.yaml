@@ -1,0 +1,11 @@
+InstantForecastDetails:
+  type: object
+  description: Current forecast details
+  required:
+    - airTemperature
+    - windSpeed
+  properties:
+    airTemperature:
+      $ref: "./value.yaml#/Value"
+    windSpeed:
+      $ref: "./value.yaml#/Value"

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: weather-forecast-api-deployment
+  namespace: development
+  labels:
+    app: weather-forecast
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: weather-forecast
+  template:
+    metadata:
+      labels:
+        app: weather-forecast
+    spec:
+      containers:
+        - name: weather-forecast
+          image: caballeros/weather-forecast-api:0.0.1
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,14 @@
+Value:
+  type: object
+  required:
+    - value
+    - units
+  properties:
+    value:
+      type: number
+      format: double
+      example: 17.1
+      description: Numeric value
+    units:
+      type: string
+      description: Units
