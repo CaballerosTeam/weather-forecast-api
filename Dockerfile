@@ -1,5 +1,6 @@
 FROM amazoncorretto:21.0.6 as builder
 ARG APP_DIR='/usr/src/weather-forecast'
+WORKDIR $APP_DIR
 COPY . $APP_DIR
 RUN ./gradlew clean bootJar
 
